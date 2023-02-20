@@ -1,0 +1,44 @@
+server:
+  port: 8001
+
+spring:
+  #当前模块的名称
+  application:
+    name: cloud-payment-service
+  datasource:
+    #数据库连接池配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    #JDBC配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.157.128:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: 123456
+
+
+#mybatis配置
+mybatis:
+  #mapper在classpath下的路径
+  mapperLocations: classpath:mapper/*.xml
+  #Entity所在包路径（不配也可以，配了写xml时，写bean的路径时候不用写全路径）
+  type-aliases-package: com.sj.springcloud.entities #这个包后面删除了，把entities加入到了commons项目
+
+
+#注册进eureka的application名称就是spring.application.name的名称
+#spring:
+#  application:
+#    name: cloud-payment-service
+
+eureka:
+  client:
+    #表示当前项目是否注册进入eureka
+    register-with-eureka: true
+    #是否从eurekaServer抓取已有的注册信息，集群必须设置为true才能搭配ribbon进行负载均衡
+    fetch-registry: true
+    service-url:
+      #eurekaServer端的接入地址
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: payment8001 #注册进eureka中的status这一列的名称
+    prefer-ip-address: true #在status这一列显示instance-id对应主机的ip地址
+
+

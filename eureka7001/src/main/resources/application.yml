@@ -1,0 +1,30 @@
+server:
+  port: 7001
+
+#单机配置如下
+#eureka项目中有三个角色，client（用户端）、service（服务端提供调用）、server（注册中心）
+#本spring项目充当server作用
+#eureka:
+#  instance:
+#    hostname: localhost #eureka服务端的实例名称,就是本Spring项目(eureka7001)
+#  client:
+#    register-with-eureka: false #是否向eureka注册：不向eureka注册本Spring项目
+#    fetch-registry: false #是否要拿取注册的项目：不拿取，因为本spring项目就是维护实例用的
+#    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+#集群配置
+#注意先修改hosts文件中的dns映射
+eureka:
+  instance:
+    hostname: eureka7001.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      #这里写其他eurekaServer的网络地址（不包括自己）
+      defaultZone: http://eureka7002.com:7002/eureka/
+  #关闭自我保护模式
+  server:
+    enable-self-preservation: false
