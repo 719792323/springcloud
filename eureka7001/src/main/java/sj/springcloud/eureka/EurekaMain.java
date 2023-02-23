@@ -15,6 +15,5 @@ import java.util.List;
 public class EurekaMain {
     public static void main(String[] args) throws InterruptedException {
         ConfigurableApplicationContext run = SpringApplication.run(EurekaMain.class, args);
-
     }
 }
