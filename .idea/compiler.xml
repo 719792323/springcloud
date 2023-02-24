@@ -9,10 +9,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka7001" />
         <module name="payment8002" />
+        <module name="consul8007" />
         <module name="consumer-order80" />
+        <module name="consul8006" />
+        <module name="eureka7002" />
+        <module name="zookeeper8004" />
+        <module name="zookeeper8005" />
+        <module name="consumer-zk-order80" />
+        <module name="consumer-consul-order80" />
         <module name="payment8001" />
         <module name="commons" />
-        <module name="eureka7002" />
       </profile>
     </annotationProcessing>
   </component>
