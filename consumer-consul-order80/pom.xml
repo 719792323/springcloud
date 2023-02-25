@@ -11,7 +11,7 @@
 
     <artifactId>consumer-consul-order80</artifactId>
     <dependencies>
-        <!--SpringCloud consul-server-->
+        <!--SpringCloud ribbon-server-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>

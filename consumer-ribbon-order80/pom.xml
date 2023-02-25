@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>consul8007</artifactId>
+    <artifactId>consumer-ribbon-order80</artifactId>
     <dependencies>
         <!--SpringCloud ribbon-server-->
         <dependency>
