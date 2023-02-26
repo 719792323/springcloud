@@ -19,4 +19,15 @@ public class PaymentController {
     public String payment() {
         return "from port:" + port + " you should pay :" + random.nextInt();
     }
+
+    @GetMapping(value = "/consul/timeout")
+    public String timeout() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+         return "from port:" + port + "time out 3s";
+    }
+
 }

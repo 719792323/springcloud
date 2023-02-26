@@ -1,0 +1,29 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-consumer-openfeign-order
+  cloud:
+    consul:
+      host: 192.168.0.44
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+        heartbeat:
+          enabled: true
+
+# 因为openFeign使用的是ribbon，所以修改ribbon的超时时间，可以解决连接超时报错的问题
+ribbon:
+  # 调用rpc超时时间
+  ReadTimeout: 5000
+  # 连接超时时间
+  ConnectTimeout: 5000
+
+
+
+#Feign日志配置
+logging:
+  level:
+    #监控的接口全路径，以及指定监控级别
+    sj.springcloud.openfegin.service.PaymentFeignService: debug
