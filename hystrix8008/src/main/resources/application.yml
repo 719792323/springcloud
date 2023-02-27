@@ -1,0 +1,14 @@
+server:
+  port: 8008
+spring:
+  application:
+    name: cloud-provider-hystrix-payment
+  cloud:
+    consul:
+      host: 192.168.0.44
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+        heartbeat:
+          enabled: true

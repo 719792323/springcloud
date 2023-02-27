@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="payment8002" />
         <module name="consumer-ribbon-custom-order80" />
+        <module name="hystrix8008" />
         <module name="consumer-ribbon-order80" />
         <module name="consumer-consul-order80" />
         <module name="commons" />
