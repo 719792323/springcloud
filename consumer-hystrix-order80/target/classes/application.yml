@@ -1,0 +1,25 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-consumer-hystrix-order
+  cloud:
+    consul:
+      host: 192.168.56.128
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+        heartbeat:
+          enabled: true
+
+ribbon:
+  # 调用rpc超时时间
+  ReadTimeout: 5000
+  # 连接超时时间
+  ConnectTimeout: 5000
+
+#打开后，既启用hystrix对feign的fallback接口代理
+feign:
+  hystrix:
+    enabled: true

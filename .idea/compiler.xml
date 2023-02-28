@@ -13,6 +13,7 @@
         <module name="consumer-ribbon-order80" />
         <module name="consumer-consul-order80" />
         <module name="commons" />
+        <module name="consumer-hystrix-order80" />
         <module name="eureka7001" />
         <module name="consul8007" />
         <module name="consumer-order80" />

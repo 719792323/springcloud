@@ -25,6 +25,7 @@
         <module>consumer-ribbon-custom-order80</module>
         <module>consumer-feign-order80</module>
         <module>hystrix8008</module>
+        <module>consumer-hystrix-order80</module>
 
     </modules>
     <!--定义父工程packaging是pom，默认是jar，父工程不需要打包成jar-->
