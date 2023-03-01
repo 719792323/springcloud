@@ -21,7 +21,6 @@ public class Controller {
     @Resource
     private RestTemplate restTemplate;
 
-//    public static final String INVOKE_URL = "http://cloud-provider-payment";
 
     @RequestMapping(value = "/ribbon/order")
     public String order() {
