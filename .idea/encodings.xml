@@ -3,6 +3,10 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/commons/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commons/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config3344/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config3344/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/configclient3355/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/configclient3355/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consul8006/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consul8006/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consul8007/src/main/java" charset="UTF-8" />
