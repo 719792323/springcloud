@@ -29,6 +29,10 @@
         <module>gateway9527</module>
         <module>config3344</module>
         <module>configclient3355</module>
+        <module>configclient3366</module>
+        <module>stream-rabbit-produce8801</module>
+        <module>stream-rabbit-consumer8802</module>
+        <module>stream-rabbit-consumer8803</module>
 
     </modules>
     <!--定义父工程packaging是pom，默认是jar，父工程不需要打包成jar-->

@@ -24,9 +24,13 @@
         <module name="zookeeper8004" />
         <module name="zookeeper8005" />
         <module name="consumer-feign-order80" />
+        <module name="stream-rabbit-produce8801" />
+        <module name="stream-rabbit-consumer8803" />
         <module name="consumer-zk-order80" />
+        <module name="stream-rabbit-consumer8802" />
         <module name="payment8001" />
         <module name="configclient3355" />
+        <module name="configclient3366" />
       </profile>
     </annotationProcessing>
   </component>

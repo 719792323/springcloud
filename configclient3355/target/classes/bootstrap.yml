@@ -9,6 +9,12 @@ spring:
       name: config #配置文件名
       profile: dev #填要读取的文件由-的后缀，config-dev.yml
       uri: http://127.0.0.1:3344 #配置服务器地址
+  #配置rabbitmq
+  rabbitmq:
+    host: 192.168.56.128
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
@@ -20,3 +26,16 @@ eureka:
     instance-id: ${spring.application.name}
     prefer-ip-address: true
     ip-address: 127.0.0.1
+
+#暴露监控端口，开启动态刷新
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+    enabled-by-default: true
+
