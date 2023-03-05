@@ -11,11 +11,17 @@ spring:
     #JDBC配置
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:mysql://192.168.157.128:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
-#    url: jdbc:mysql://192.168.56.128:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
-    url: jdbc:mysql://192.168.0.44:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://192.168.56.128:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
+#    url: jdbc:mysql://192.168.0.44:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: 123456
-
+  zipkin:
+    #zipkin服务的URL地址
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      # 采样率，取值范围我0-1之间的数，1表示全部采集
+      probability: 1
 
 #mybatis配置
 mybatis:

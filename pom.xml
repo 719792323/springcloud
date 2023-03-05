@@ -33,6 +33,10 @@
         <module>stream-rabbit-produce8801</module>
         <module>stream-rabbit-consumer8802</module>
         <module>stream-rabbit-consumer8803</module>
+        <module>alibaba-payment9001</module>
+        <module>alibaba-payment9002</module>
+        <module>alibaba-order80</module>
+        <module>alibaba-config3377</module>
 
     </modules>
     <!--定义父工程packaging是pom，默认是jar，父工程不需要打包成jar-->
