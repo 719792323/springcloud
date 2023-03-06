@@ -1,0 +1,30 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    consul:
+      host: 192.168.56.128
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+        heartbeat:
+          enabled: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名称进行路由
+      routes:
+        - id: payment_route_payment1 # 路由的id,没有规定规则但要求唯一,建议配合服务名
+          #匹配后提供服务的路由地址
+          uri: http://127.0.0.1:8006 #uri可以是ip也可以是dns
+          predicates:
+            - Path=/consul/payment # 断言，路径相匹配的进行路由，具体路径
+
+#        - id: payment_route_default
+#          uri: http://127.0.0.1:8006
+#          predicates:
+#            Path=/consul/** #断言,路径相匹配的进行路由，通配写法

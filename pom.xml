@@ -25,6 +25,18 @@
         <module>consumer-ribbon-custom-order80</module>
         <module>consumer-feign-order80</module>
         <module>hystrix8008</module>
+        <module>consumer-hystrix-order80</module>
+        <module>gateway9527</module>
+        <module>config3344</module>
+        <module>configclient3355</module>
+        <module>configclient3366</module>
+        <module>stream-rabbit-produce8801</module>
+        <module>stream-rabbit-consumer8802</module>
+        <module>stream-rabbit-consumer8803</module>
+        <module>alibaba-payment9001</module>
+        <module>alibaba-payment9002</module>
+        <module>alibaba-order80</module>
+        <module>alibaba-config3377</module>
 
     </modules>
     <!--定义父工程packaging是pom，默认是jar，父工程不需要打包成jar-->

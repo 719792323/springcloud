@@ -7,11 +7,10 @@ spring:
   cloud:
     consul:
       # consul注册中心地址
-     host: 192.168.0.44
-#      host: 192.168.56.128
-     port: 8500
-     discovery:
-#       hostname: 192.168.0.233
+      host: 192.168.56.128
+      port: 8500
+      discovery:
+        #       hostname: 192.168.0.233
         hostname: 127.0.0.1
         service-name: ${spring.application.name}
         #添加心跳检查

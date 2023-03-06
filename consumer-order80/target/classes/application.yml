@@ -3,7 +3,13 @@ server:
 spring:
   application:
     name: cloud-order-service
-
+  zipkin:
+    #zipkin服务的URL地址
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      # 采样率，取值范围我0-1之间的数，1表示全部采集
+      probability: 1
 eureka:
   client:
     #表示当前项目是否注册进入eureka

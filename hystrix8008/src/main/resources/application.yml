@@ -5,7 +5,7 @@ spring:
     name: cloud-provider-hystrix-payment
   cloud:
     consul:
-      host: 192.168.0.44
+      host: 192.168.56.128
       port: 8500
       discovery:
         hostname: 127.0.0.1

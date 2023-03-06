@@ -1,0 +1,40 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          #git clone提供的地址
+          uri: https://github.com/719792323/cloud-config.git
+          search-paths:
+            #git的仓库名
+            - cloud-config
+      # 选择git的仓库的哪个分支
+      label: master
+  #配置rabbitmq
+  rabbitmq:
+    host: 192.168.56.128
+    port: 5672
+    username: guest
+    password: guest
+
+#暴露bus相关刷新端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: ${spring.application.name}
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
