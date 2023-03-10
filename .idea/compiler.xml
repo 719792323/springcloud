@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="consumer-ribbon-custom-order80" />
         <module name="alibaba-payment9001" />
+        <module name="alibaba-sentinel-service8401" />
         <module name="alibaba-payment9002" />
         <module name="consumer-ribbon-order80" />
         <module name="commons" />

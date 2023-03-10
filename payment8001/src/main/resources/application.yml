@@ -11,7 +11,7 @@ spring:
     #JDBC配置
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:mysql://192.168.157.128:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
-    url: jdbc:mysql://192.168.56.128:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://192.168.56.128:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
 #    url: jdbc:mysql://192.168.0.44:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: 123456

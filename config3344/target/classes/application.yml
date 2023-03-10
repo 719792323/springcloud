@@ -15,18 +15,18 @@ spring:
       # 选择git的仓库的哪个分支
       label: master
   #配置rabbitmq
-#  rabbitmq:
-#    host: 192.168.56.128
-#    port: 5672
-#    username: guest
-#    password: guest
+  rabbitmq:
+    host: 192.168.56.128
+    port: 5672
+    username: guest
+    password: guest
 
 #暴露bus相关刷新端点
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: 'bus-refresh'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
 
 eureka:
   client:

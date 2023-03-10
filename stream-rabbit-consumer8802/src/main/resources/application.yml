@@ -40,7 +40,8 @@ spring:
           destination: studyExchange
           content-type: application/json
           binder: defaultRabbit
-          group: consumer_a #定义分组，相同的组不会导致消息重复消费，不同组会消息重复消费
+          #定义分组，相同的组不会导致消息重复消费，不同组会消息重复消费
+          group: consumer_a
 
 eureka:
   client: # 客户端进行Eureka注册的配置
