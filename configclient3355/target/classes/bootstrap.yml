@@ -10,11 +10,11 @@ spring:
       profile: dev #填要读取的文件由-的后缀，config-dev.yml
       uri: http://127.0.0.1:3344 #配置服务器地址
   #配置rabbitmq
-  rabbitmq:
-    host: 192.168.56.128
-    port: 5672
-    username: guest
-    password: guest
+#  rabbitmq:
+#    host: 192.168.56.128
+#    port: 5672
+#    username: guest
+#    password: guest
 
 eureka:
   client:
@@ -23,7 +23,7 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka/
   instance:
-    instance-id: ${spring.application.name}
+    instance-id: ${spring.application.name}1
     prefer-ip-address: true
     ip-address: 127.0.0.1
 

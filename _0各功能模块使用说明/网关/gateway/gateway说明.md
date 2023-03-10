@@ -34,5 +34,108 @@ gate除了提供了-Path的URL路径地址断言，还提供了如时间断言�
 2. gateway服务不能引入spring-boot-starter-web和spring-boot-starter-actuator的依赖，否则无法正常启动
 ## 2.2 相关配置
 ```yaml
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    # 注册中心注册，这里用的是consul
+    consul:
+      host: 192.168.56.128
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+        heartbeat:
+          enabled: true
+    # gateway相关配置
+    gateway:
+      discovery:
+        locator:
+          # 从注册中心动态创建路由的功能，利用微服务名称进行路由
+          enabled: true
+      # 路由规则，这里是routes，可以写多个路由规则
+      routes:
+        # 路由规则的id，每个路由规则要有唯一的id
+        - id: payment_route_payment1
+          # 路由路径写法
+          # 负载均衡路由写法：lb://服务注册中心的服务名称
+          uri: lb://cloud-provider-payment
+          #直接一个地址或者dns也可以，但是没有负载均衡功能
+        # uri: http://127.0.0.1:8006
+        # 断言，注意是predicates，所以可以有多个断言规则
+          predicates:
+            # 路径匹配断言
+            - Path=/consul/payment 
+```
 
+
+
+## 2.3 代码方式配置路由
+如下配置了两个路由
+```java
+@Configuration
+public class RouteConfiguration {
+
+    //可以通过@Bean，配置多个locator
+    @Bean
+    public RouteLocator locator(RouteLocatorBuilder builder) {
+        RouteLocatorBuilder.Builder routes = builder.routes();
+        routes.route(
+                "payment_route_default",//id
+                r -> r.path("/consul/**").uri("http://127.0.0.1:8006")
+        ).build();
+        return routes.build();
+    }
+
+    @Bean
+    public RouteLocator locator2(RouteLocatorBuilder builder) {
+        RouteLocatorBuilder.Builder routes = builder.routes();
+        routes.route(
+                "payment_route_default",//id
+                r -> r.path("xx").uri("xxx")
+        ).build();
+        return routes.build();
+    }
+}
+
+```
+## 2.4 过滤器配置
+filter方法设置过滤器过着，order来设置过滤器优先级
+```java
+@Component
+public class FilterConfiguration implements GlobalFilter, Ordered {
+    @Override
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        ServerHttpRequest request = exchange.getRequest();
+        String uname = request.getQueryParams().getFirst("uname");
+        //过滤
+        if (uname == null) {
+            //设置状态码
+            exchange.getResponse().setStatusCode(HttpStatus.BAD_GATEWAY);
+            //设置请求完成
+            return exchange.getResponse().setComplete();
+        }
+        // 放行
+        return chain.filter(exchange);
+    }
+
+    /**
+     * 过滤器加载的顺序 越小,优先级别越高
+     */
+    @Override
+    public int getOrder() {
+        return 0;
+    }
+
+}
+```
+## 2.5启动类
+```java
+@SpringBootApplication
+@EnableDiscoveryClient
+public class GateWay9527 {
+    public static void main(String[] args) {
+        SpringApplication.run(GateWay9527.class, args);
+    }
+}
 ```

@@ -37,8 +37,11 @@ spring:
           type: rabbit
       bindings:
         output:
+          #定义rabbit的exchange相当于kafka的topic
           destination: studyExchange
+          #传输数据类型
           content-type: application/json
+          #绑定在binders中定义的中间件
           binder: defaultRabbit
 
 eureka:

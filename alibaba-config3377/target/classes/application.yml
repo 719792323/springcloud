@@ -1,3 +1,4 @@
 spring:
   profiles:
-    active: dev #这里是profile功能， 这个配置表示选择application-dev文件
+    active: info
+#    active: dev #这里是profile功能， 这个配置表示选择application-dev文件
