@@ -9,9 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="consumer-ribbon-custom-order80" />
         <module name="alibaba-payment9001" />
+        <module name="seata-order80" />
         <module name="alibaba-sentinel-service8401" />
         <module name="alibaba-payment9002" />
         <module name="consumer-ribbon-order80" />
+        <module name="seata-storage81" />
         <module name="commons" />
         <module name="zookeeper8004" />
         <module name="zookeeper8005" />
@@ -34,9 +36,13 @@
         <module name="consumer-order80" />
         <module name="consul8006" />
         <module name="eureka7002" />
+        <module name="seata-account82" />
         <module name="consumer-zk-order80" />
         <module name="configclient3366" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="seta-order80" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

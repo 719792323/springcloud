@@ -38,6 +38,10 @@
         <module>alibaba-order80</module>
         <module>alibaba-config3377</module>
         <module>alibaba-sentinel-service8401</module>
+        <module>seata-order80</module>
+        <module>seata-order80</module>
+        <module>seata-storage81</module>
+        <module>seata-account82</module>
 
     </modules>
     <!--定义父工程packaging是pom，默认是jar，父工程不需要打包成jar-->
