@@ -25,6 +25,7 @@ public class Controller {
     }
 
 
+    //使用blockHandler
     @RequestMapping(value = "/sentinel/c")
     @SentinelResource(value = "sr_c", blockHandler = "cHandler")
     public String c(String key, String value) {
@@ -35,9 +36,9 @@ public class Controller {
         return "c method error";
     }
 
-    @RequestMapping(value = "/sentinel/d")
     //使用URL的降级规则，测试发现只能转到系统默认降级方法，要使用自定义方法需要用SentinelResource的value值配置规则
     //注意blockHandler要和标注的方法返回值一致
+    @RequestMapping(value = "/sentinel/d")
     @SentinelResource(value = "sr_d", blockHandlerClass = MyBlockHandler.class, blockHandler = "handler1")
     public Object d() {
         return String.format("port:%s,result:d", port);
